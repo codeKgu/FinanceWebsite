@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <table class = "table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>TOTAL</th>
+        </tr>
+        </thead>
+        <tbody>
+        {%for company in portfolio%}
+        <tr>  
+            <td>{{company.symbol}}</td>
+            <td>{{company.company}}</td>
+            <td>{{company.shares}}</td>
+            <td>{{company.price}}</td>
+            <td>{{company.total}}</td>
+        </tr>
+        {%endfor%}
+        <tr>
+            <td>CASH</td>
+            <th></th>
+            <th></th>
+            <th></th>
+            <td>{{cash}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>{{total}}</th>
+        </tr>
+        </tfoot>
+    </table>
+{% endblock %}
